@@ -1,0 +1,47 @@
+{
+  "name": "Ubuntu Dev Container with Java, Ruby, and Node.js",
+  "build": {
+      "dockerfile": "Dockerfile",
+      "context": ".."
+  },
+  "customizations": {
+      "vscode": {
+          "extensions": [
+              "MITRE-Health.vscode-language-fsh",
+              "redhat.java",
+              "Shopify.ruby-lsp",
+              "GitHub.copilot",
+              "GitHub.copilot-chat",
+              "yzhang.markdown-all-in-one",
+              "bierner.markdown-preview-github-styles",
+              "formulahendry.github-actions",
+              "ms-azuretools.vscode-docker",
+              "gematikde.codfsh"
+          ],
+          "settings": {
+              "terminal.integrated.shell.linux": "/bin/bash",
+              "files.autoSave": "afterDelay",
+              "editor.smoothScrolling": true,
+              "terminal.integrated.lineHeight": 1.5,
+              "editor.fontLigatures": true,
+              "editor.lineHeight": 1.5,
+              "editor.minimap.enabled": false,
+              "editor.tabSize": 2,
+              "workbench.iconTheme": "material-icon-theme",
+              "editor.semanticTokenColorCustomizations": {
+                  "enabled": true
+              },
+              "editor.semanticHighlighting.enabled": true,
+              "files.eol": "\n",
+              "extensions.ignoreRecommendations": true,
+              "task.problemMatchers.neverPrompt": {
+                  "shell": true
+              },
+              "codfsh.HapiValidator.path": "/usr/local/bin/validator_cli.jar",
+              "codfsh.HapiValidator.Settings.AdditionalParameter": "-jurisdiction DE -locale de-DE -tx n/a -debug"
+          }
+      }
+  },
+  "postCreateCommand": "echo 'Environment setup complete!'",
+  "remoteUser": "root"
+}
